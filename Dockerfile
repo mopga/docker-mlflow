@@ -8,7 +8,7 @@ RUN mkdir -p /mlflow/store && \
     mkdir -p /mlflow/artifacts && \
     mkdir -p /mlflow/github
 
-RUN pip install mlflow[extras]
+RUN pip install mlflow[extras] && \
     git clone https://github.com/mlflow/mlflow.git /mlflow/github
 
 ENV MLFLOW_TRACKING_URI=http://localhost:5000
