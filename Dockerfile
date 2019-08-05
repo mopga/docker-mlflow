@@ -11,6 +11,8 @@ RUN mkdir -p /mlflow/store && \
 RUN pip install mlflow[extras] && \
     git clone https://github.com/mlflow/mlflow.git /mlflow/github
 
+RUN pip install mlflow==1.1.0
+
 ENV MLFLOW_TRACKING_URI=http://localhost:5000
 CMD mlflow server \
     --backend-store-uri file://mlflow/store \
